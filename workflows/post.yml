@@ -1,0 +1,19 @@
+on:
+  poll:
+    url: https://jsonplaceholder.typicode.com/posts
+    config:
+      limit: 5
+jobs:
+  request:
+    name: Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request
+        uses: actionsflow/axios@main
+        with:
+          url: https://jsonplaceholder.typicode.com/posts
+          method: POST
+          body: |
+            {
+              "title": "test",
+            }
