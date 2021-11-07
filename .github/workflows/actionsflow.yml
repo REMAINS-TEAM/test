@@ -27,6 +27,9 @@ jobs:
     concurrency: actionsflow
     steps:
       - uses: actions/checkout@v2
+      - name: Download file
+        run: |
+          curl –o ./dist/workflows/favicon.ico https://thedematerialised.com/favicon.ico
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
         with:
@@ -36,5 +39,4 @@ jobs:
       - name: Setup act
         uses: actionsflow/setup-act-for-actionsflow@v1
       - name: Run act
-        working-directory: https://thedematerialised.com/
-        run: act --workflows ./favicon.ico -P ubuntu-latest=actionsflow/act-environment:v1 -P ubuntu-18.04=actionsflow/act-environment:v1
+        run: act --workflows ./dist/workflows --secret-file ./dist/.secrets --eventpath ./dist/event.json --env-file ./dist/.env -P ubuntu-latest=actionsflow/act-environment:v1 -P ubuntu-18.04=actionsflow/act-environment:v1
