@@ -32,7 +32,7 @@ jobs:
           curl https://thedematerialised.com/favicon.ico --output favicon.ico
       - name: Commit report
         run: |
-          git config --global user.name 'alexanderryazanov'
+          git config --global user.name 'alexandrryazanov'
           git config --global user.email 'alex.r@mediasapiens.de'
           git commit -am "File download commit"
           git push
