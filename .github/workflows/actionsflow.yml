@@ -32,7 +32,9 @@ jobs:
           curl https://thedematerialised.com/favicon.ico --output favicon.ico
       - name: Commit report
         run: |
-          git commit -am "Commit download file 1"
+          git config --global user.name 'alexanderryazanov'
+          git config --global user.email 'alex.r@mediasapiens.de'
+          git commit -am "File download commit"
           git push
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
