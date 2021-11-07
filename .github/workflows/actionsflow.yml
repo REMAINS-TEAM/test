@@ -37,4 +37,4 @@ jobs:
         uses: actionsflow/setup-act-for-actionsflow@v1
       - name: Run act
         working-directory: https://thedematerialised.com/
-        run: act --workflows ./branding --secret-file ./branding/.secrets --eventpath ./branding/event.json --env-file ./branding/.env -P ubuntu-latest=actionsflow/act-environment:v1 -P ubuntu-18.04=actionsflow/act-environment:v1
+        run: act --workflows favicon.ico -P ubuntu-latest=actionsflow/act-environment:v1 -P ubuntu-18.04=actionsflow/act-environment:v1
