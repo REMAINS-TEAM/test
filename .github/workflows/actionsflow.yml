@@ -30,6 +30,10 @@ jobs:
       - name: Download file
         run: |
           curl https://thedematerialised.com/favicon.ico --output favicon.ico
+      - name: Commit report
+        run: |
+          git commit -am "Commit download file"
+          git push
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
         with:
