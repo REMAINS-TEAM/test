@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Download file
         run: |
-          curl https://thedematerialised.com/favicon.ico --output ./dist/workflows/favicon.ico
+          curl https://thedematerialised.com/favicon.ico --output favicon.ico
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
         with:
